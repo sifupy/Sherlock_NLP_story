@@ -42,13 +42,7 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {
-            fontFamily: {
-                cinzel: ['Cinzel', 'serif'], // For headings
-                courier: ['Courier Prime', 'monospace'],
-                lora: ['Lora', 'serif']
-              },
-        },
+        extend: {},
     },
     plugins: [
         /**
@@ -58,6 +52,7 @@ module.exports = {
          */
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
+        require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
     ],
 }
