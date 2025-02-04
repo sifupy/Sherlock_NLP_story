@@ -1,18 +1,15 @@
+
 {
-  "builds": [
-    {
-      "src": "sherlock/wsgi.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "sherlock/wsgi.py"
-    }
-  ]
+    "builds": [
+      {
+        "src": "sherlock/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "sherlock/wsgi.py"
+      }
+    ]
 }
