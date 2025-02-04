@@ -1,15 +1,17 @@
-
 {
-    "builds": [
-      {
-        "src": "sherlock/wsgi.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "sherlock/wsgi.py"
-      }
-    ]
+  "builds": [
+    {
+      "src": "sherlock/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "sherlock/wsgi.py"
+    }
+  ],
+  "scripts": {
+    "build": "python manage.py collectstatic --noinput && tailwindcss build theme/static/css/tailwind.css -o theme/static/css/main.css"
+  }
 }
