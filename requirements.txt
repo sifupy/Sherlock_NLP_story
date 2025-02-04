@@ -1,0 +1,2 @@
+django-browser-reload==1.12.1
+django-tailwind==3.6.0

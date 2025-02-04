@@ -1,0 +1,538 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pipe & Parse</title>
+    <style>
+    .cast {
+        inset: 0;
+        background-image: url('/static/main_app/city1.png');  
+        background-size: cover;
+        background-position: center;
+        opacity: 0.9; 
+        z-index: -1; 
+      } </style>
+    
+</head>
+<body class="bg-[#3E2723] p-4 font-courier text-gray-200">
+    <!-- idk what to comment it's just the banner -->
+    <div class="p-4 flex justify-between" id="top-nav" >
+        <div class="flex px-4">
+            <img src="{% static 'main_app/pipe.png' %}" alt="pipe" class="size-8 ">
+            <p class="font-bold  ml-2 text-xl">Sherlock Parse</p>
+        </div>
+        <p class="font-bold text-gray-200">By : Sayf Fazeel & Lokman </p>
+    </div>
+    <div class="grid grid-cols-2 p-6 max-h-screen min-h-svh">
+        <div>
+            <p class="text-6xl font-bold text-left font-cinzel mb-8 ">Unravel the Mystery with Sherlock Holmes</p>
+            <p class="text-lg leading-relaxed">
+                <span class="font-semibold">Sunday, 12 March</span> — Mr. Holmes received a peculiar letter from an anonymous sender. The letter was written in a cryptic code, with strange symbols and numbers scattered across the page. As he sat by the fireplace, puffing on his pipe, Holmes meticulously examined the letter, his sharp eyes scanning every detail. "Watson," he said, "this is no ordinary case. The key lies in the patterns hidden within the text, i think we need an NLP engineer to help us ! "...
+            </p>
+
+        </div>
+        <div class="relative pt-8">
+            <div class="relative bg-gray-300 p-6 rounded-lg shadow-lg max-w-80 mx-auto">
+                <div class="absolute -bottom-4 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                <p class="text-lg text-gray-700 italic">"We've heard that you are an NLP engineer,would u be able to help us ? "</p>
+                <div class="absolute right-6 bottom-1">
+                    <button class="text-gray-700 text-lg italic hover:text-green-600">yes</button>
+                    <button class="text-gray-700 text-lg italic hover:text-red-600">no</button>
+                </div>
+            </div>
+            <img src="{% static 'main_app/caracter1.png' %}" alt="mr.holmes" class="absolute opacity-95  right-0" >
+            
+        </div>
+        
+
+    </div>
+    <!-- deuxiemme page discussion et document xml -->
+    <div class="p-6   w-full h-fit bg-[#F3e9dc] text-[#3E2723] rounded-lg ">
+        <h1 class="text-5xl font-cinzel text-center font-bold mb-3">WHAT is this letter :</h1>
+        <div class="grid grid-cols-7">
+            <div class="bg-[#3E2723] flex-col  text-white rounded-lg p-6 w-full h-fit overflow-hidden col-span-2 flex justify-center">
+                <p class="">
+                    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+                    &lt;!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd"&gt;
+                    &lt;PubmedArticleSet&gt;
+                    
+                    &lt;PubmedArticle&gt;
+                        &lt;MedlineCitation Status="MEDLINE" Owner="NLM"&gt;
+                        &lt;PMID Version="1"&gt;7349888&lt;/PMID&gt;
+                        &lt;DateCompleted&gt;
+                            &lt;Year&gt;1980&lt;/Year&gt;
+                            &lt;Month&gt;02&lt;/Month&gt;
+                            &lt;Day&gt;26&lt;/Day&gt;
+                        &lt;/DateCompleted&gt;
+                        &lt;DateRevised&gt;
+                            
+                    
+                    </p>
+                    <br>
+                    <br>
+                <a class="bg-gray-300 rounded-lg text-center text-[#3E2723] font-bold px-4 py-2  hover:bg-[#3E2723] hover:text-white transition-all duration-300 hover:border-gray-300 border-2"  href="{% static 'main_app/sample-0001.xml' %}" download="sample-0001.xml">See full letter</a>
+            </div>
+            <div class="col-span-5  flex flex-col pl-6">
+                
+                <div class="flex ">
+                    <img src="{% static 'main_app/dr.watson.png'%}" alt="Dr.watson" class="size-48">
+                    <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg w-fit max-h-9 mx-auto">
+                        <div class="absolute -bottom-4 left-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                        <p class="text-sm  italic whitespace-nowrap">I really can't make heads or tails of this!</p>
+                    </div>
+                    <div class="pt-14 flex -ml-44">
+                        <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg max-w-80 min-w-72 max-h-36 mx-auto">
+                            <div class="absolute -bottom-4 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                            <p class="text-sm  italic">Ah, Watson, I have consulted our esteemed friend here, and he informs me that this peculiar document is, in fact, an XML file. Is that not so, my dear friend ?!</p>
+                            <div class="absolute right-6 bottom-1">
+                                <button class=" text-sm italic hover:text-green-600">indoubtly</button>
+                                <button class="t text-sm italic hover:text-red-600">I'm not sure</button>
+                            </div>
+                        </div>
+                        <img src="{% static 'main_app/caracter1.png'%}" alt="Mr.holmes" class="size-48 mt-20">
+                    </div>
+                </div>
+                <div class="flex ">
+                    <img src="{% static 'main_app/dr.watson.png'%}" alt="Dr.watson" class="size-48">
+                    <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg w-fit max-h-9 mx-auto">
+                        <div class="absolute -bottom-4 left-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                        <p class="text-sm text-[#3E2723]  italic whitespace-nowrap">An XML file? What on earth is that?</p>
+                    </div>
+                    <div class="pt-14 flex -ml-32">
+                        <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg max-w-80 min-w-72 max-h-40 mx-auto">
+                            <div class="absolute -bottom-4 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                            <p class="text-sm text-[#3E2723]  italic">XML stands for Extensible Markup Language. It’s a way to structure data in a readable format for both humans and machines. These symbols—like &lt;message&gt; and &lt;/message&gt;—are tags that define the structure of the information.</p>
+                        </div>
+                        <img src="{% static 'main_app/caracter1.png'%}" alt="Mr.holmes" class="size-48 mt-20">
+                    </div>
+                </div>
+                <div class="flex justify-start pt-6 w-3/5">
+                    <img src="{% static 'main_app/dr.watson.png'%}" alt="Dr.watson" class="size-48">
+                    <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg max-w-80 max-h-28 mx-auto">
+                        <div class="absolute -bottom-4 left-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                        <p class="text-sm text-[#3E2723]  italic ">AH i see, The information must be in this abstract tag. I’ll call our NLP friend—he’ll know how to extract it. With his help, we’ll crack this in no time.</p>
+                    </div>
+                    
+                </div>
+
+        </div>
+
+        </div>
+    </div>
+   <!-- 3rd page stats of dataset -->
+    <div class="w-full h-screen p-6 " id="Notebook">
+        <h1 class="text-5xl font-cinzel text-center font-bold mb-12">Dr. Watson's NLP Lab</h1>
+        <div class="grid w-full grid-cols-3">
+            <div class="flex-col">
+                <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg w-fit max-h-9 mx-auto">
+                    <div class="absolute -bottom-4 left-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                    <p class="text-sm text-[#3E2723] italic whitespace-nowrap">So, which order are we going to work?</p>
+                </div>
+                <img src="{% static 'main_app/dr.watson3.png' %}" alt="" class="size-52 opacity-95">
+             </div>
+             <div class="col-span-2 flex flex-col items-center">
+                <p class="w-3/4">so after 4h of work with computer on the letter dr.watson wrote all the informations he got in his notebook</p>
+                <div class="relative overflow-hidden w-3/4 p-4 rounded-lg bg-gray-300 h-fit text-[#3E2723]">
+                    <h1 class="text-lg font-bold underline text-center mb-4">Dr. Watson's Notes:</h1>
+                    
+                    <!-- Carousel Container -->
+                    <div class="flex transition-transform duration-500 ease-in-out w-full" id="carousel">
+                      <ul class="w-full px-10 italic list-disc flex-shrink-0">
+                        <li>There are <span class="underline">70,258</span> abstracts in the document.</li>
+                        <li>Number of words before stemming: <span class="underline">52,128</span></li>
+                        <li>Number of unigrams: <span class="underline">28,945</span></li>
+                        <li>Most frequent words:
+                          <ul class="pl-3">
+                            <li>Patients: 26,236 occurrences</li>
+                            <li>Associated: 16,247 occurrences</li>
+                            <li>Risk: 15,917 occurrences</li>
+                            <li>Study: 13,956 occurrences</li>
+                            <li>Clinical: 11,209 occurrences</li>
+                            <li>Data: 10,836 occurrences</li>
+                            <li>Treatment: 9,126 occurrences</li>
+                            <li>Disease: 8,958 occurrences</li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="w-full px-10 italic list-disc flex-shrink-0">
+                        <li>There are <span class="underline">852,399</span> bigrams in the corpus.</li>
+                        <li>Most frequent bigrams:
+                          <ul class="pl-3">
+                            <li>(risk,factor): 2,498 occurrences</li>
+                            <li>(confid,interv): 2,450 occurrences</li>
+                            <li>(age,year): 2,262 occurrences</li>
+                            <li>(primari,outcom): 2,079 occurrences</li>
+                            <li>(increas,risk): 1,906 occurrences</li>
+                            <li>(clinic,trial): 1,681 occurrences</li>
+                            <li>(advers,event): 1,499 occurrences</li>
+                            <li>(associ,increas): 1,486 occurrences</li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="w-full px-10 italic list-disc flex-shrink-0">
+                        <li>Most frequent tags:
+                          <ul class="pl-3">
+                            <li>NN : 751,833 occurrences</li>
+                            <li>JJ : 483,422 occurrences</li>
+                            <li>NNS : 353,074 occurrences</li>
+                            <li>NNP : 252,738 occurrences</li>
+                            <li>VBD : 140,520 occurrences</li>
+                            <li>VBN : 100,630 occurrences</li>
+                            <li>VBG : 87,084 occurrences</li>
+                            <li>RB : 79,282 occurrences</li>
+                          </ul>
+                        </li>
+                        <li>tags meaning: NN:Noun_singular, NNS:Noun_plural, JJ:Adjective, 
+                            NNP:Proper_noun_singular, VBD:Verb_past_tense, VBN:Verb_past_participle, 
+                            VBG:Verb, gerund/present participle, RB:Adverb
+                        </li>
+                      </ul>
+                      <ul class="w-full px-10 italic list-disc flex-shrink-0">
+                        <li>there is <span class="underline">621</span> diffrent combination of tags in this document</li>
+                        <li>Most frequent POS tag bigrams:
+                          <ul class="pl-3">
+                            <li>('NN', 'NN'): 248,853 occurrences</li>
+                            <li>('JJ', 'NN'): 228,740 occurrences</li>
+                            <li>('NN', 'NNS'): 99,237 occurrences</li>
+                            <li>('JJ', 'NNS'): 93,934 occurrences</li>
+                            <li>('NN', 'JJ'): 84,122 occurrences</li>
+                            <li>('NNP', 'NNP'): 83,134 occurrences</li>
+                            <li>('JJ', 'JJ'): 81,907 occurrences</li>
+                            <li>('NNS', 'JJ'): 56,667 occurrences</li>
+                          </ul>
+                        </li>
+                        <li>tags meaning: NN:Noun_singular, NNS:Noun_plural, JJ:Adjective, 
+                            NNP:Proper_noun_singular, VBD:Verb_past_tense, VBN:Verb_past_participle, 
+                            VBG:Verb, gerund/present participle, RB:Adverb
+                        </li>
+                      </ul>
+                      <ul class="w-full px-10 italic list-disc flex-shrink-0">
+                        <li>POS tag bigrams with biggest probability:
+                          <ul class="pl-3">
+                            <li>('POS', 'NN'): 0.820</li>
+                            <li>('MD', 'VB'): 0.784</li>
+                            <li>('RBS', 'JJ'): 0.723</li>
+                            <li>('JJ', 'NN'): 0.501</li>
+                            <li>('TO', 'VB'): 0.5</li>
+                            <li>('TO', 'NN'): 0.5</li>
+                            <li>('CC', 'JJ'): 0.486</li>
+                            <li>('RBR', 'JJ'): 0.485</li>
+                          </ul>
+                        </li>
+                        <li>These tags are based on 
+                            <a href="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html" 
+                               class="underline font-bold" target="_blank">
+                               Penn Treebank POS tags
+                            </a>
+                        </li>
+                      </ul>
+                    </div>
+                  
+                    <!-- Navigation -->
+                    <button onclick="prevSlide()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-[#3E2723] text-white px-2 py-1 rounded-full">❮</button>
+                    <button onclick="nextSlide()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#3E2723] text-white px-2 py-1 rounded-full">❯</button>
+                    
+                    <div id="carousel-dots" class="flex justify-center space-x-2 mt-4">
+                      <span class="w-3 h-3 bg-[#3E2723] rounded-full"></span>
+                      <span class="w-3 h-3 bg-gray-500 rounded-full"></span>
+                      <span class="w-3 h-3 bg-gray-500 rounded-full"></span>
+                      <span class="w-3 h-3 bg-gray-500 rounded-full"></span>
+                      <span class="w-3 h-3 bg-gray-500 rounded-full"></span>
+                    </div>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+    <!-- 4th page another disccussion that leads to topic modeling -->
+    <div class="p-6   w-full h-fit bg-[#F3e9dc] text-[#3E2723] rounded-lg ">
+        <h1 class="text-5xl font-cinzel text-center font-bold mb-3">Disease,Association.. ?! </h1>
+        <div class="grid grid-cols-7">
+            <div class="bg-[#3E2723] flex-col place-content-center text-white rounded-lg p-6 w-full h-fit overflow-hidden col-span-2 flex items-center">
+                <ul class="w-full list-disc italic">
+                    <li>There are <span class="underline">70,258</span> abstracts in the document.</li>
+                    <li>Number of words before stemming: <span class="underline">52,128</span></li>
+                    <li>Number of unigrams: <span class="underline">28,945</span></li>
+                    <li>Most frequent words:
+                        <ul class="pl-3">
+                            <li>Patients: 26,236 occurrences</li>
+                            <li>Associated: 16,247 occurrences</li>
+                            <li>Risk: 15,917 occurrences</li>
+                            <li>Study: 13,956 occurrences</li>
+                            <li>Clinical: 11,209 occurrences</li>
+                            <li>Data: 10,836 occurrences</li>
+                            <li>Treatment: 9,126 occurrences</li>
+                            <li>Disease: 8,958 occurrences</li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <a class="bg-gray-300 rounded-lg text-[#3E2723] font-bold px-4 py-2  hover:bg-[#3E2723] hover:text-white transition-all duration-300 hover:border-gray-300 border-2" href="#Notebook">See full notebook</a>
+            </div>
+            
+            <div class="col-span-5 w-full flex flex-col pl-6">
+                
+                <div class="flex ">
+                    <img src="{% static 'main_app/dr.watson.png'%}" alt="Dr.watson" class="size-48">
+                    <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg max-w-72 h-fit mx-auto">
+                        <div class="absolute -bottom-4 left-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                        <p class="text-sm  italic ">Sherlock, as I was working with the data, I started noticing some strange  words popping up—like "diseas," "association," and "outcom." It seems like something’s off</p>
+                    </div>
+                    <div class="pt-40 flex -ml-24">
+                        <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg max-w-80 min-w-72 max-h-36 mx-auto">
+                            <div class="absolute -bottom-4 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                            <p class="text-sm  italic">Recently, I heard rumors of a dark and mysterious association, one that operates in the shadows, hidden from the world. No one has been able to uncover what they're truly up to.</p>
+                        </div>
+                        <img src="{% static 'main_app/caracter1.png'%}" alt="Mr.holmes" class="size-48 mt-20">
+                    </div>
+                </div>
+                <div class="flex ">
+                    <img src="{% static 'main_app/dr.watson.png'%}" alt="Dr.watson" class="size-48">
+                    <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg w-fit max-w-72 max-h-20 mx-auto">
+                        <div class="absolute -bottom-4 left-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                        <p class="text-sm text-[#3E2723]  italic ">Hmm, yes, Sherlock. But we must be careful. We can't do much with just these words alone</p>
+                    </div>
+                    <div class="pt-24 flex -ml-32">
+                        <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg max-w-80 min-w-72 max-h-48 mx-auto">
+                            <div class="absolute -bottom-4 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
+                            <p class="text-sm text-[#3E2723]  italic">Yes, I know. This is why I’ve consulted my NLP colleague, and he mentioned a technique called topic modeling. It could give us a clearer view of the relationships and correlations between these words. There's no doubt it will reveal more about what's really going on.</p>
+                        </div>
+                        <img src="{% static 'main_app/caracter1.png'%}" alt="Mr.holmes" class="size-48 mt-20">
+                    </div>
+                </div>
+
+        </div>
+
+        </div>
+    </div>
+
+    <!-- end page 4 -->
+    <!-- 5th page topic modeling -->
+     <div class="w-full h-svh pt-6">
+        <h1 class="text-5xl font-cinzel text-center font-bold mb-12">Topic modeling</h1>
+        <div class="grid grid-cols-3 ">
+            <div class="col-span-1 grid grid-cols-2 grid-rows-3 gap-2 pb-4">
+                <div class="bg-gray-300 text-[#3E2723] p-2 rounded-lg cursor-pointer">
+                    <p class="font-bold text-center">Topic 1</p>
+                    <p>infection, patient, vaccine, study, treatment, hiv, year, child, compared, case</p>
+                </div>
+                <div class="bg-gray-300 text-[#3E2723] p-2 rounded-lg cursor-pointer" >
+                    <p class="font-bold text-center">Topic 2</p>
+                    <p>risk, associated, higher, score, disease, age, study, association, patient, year</p>
+                </div>
+                <div class="bg-gray-300 text-[#3E2723] p-2 rounded-lg cursor-pointer">
+                    <p class="font-bold text-center">Topic 3</p>
+                    <p>genetic, gene, variant, association, study, associated, disease, risk, cancer, analysis</p>
+                </div>
+                <div class="bg-gray-300 text-[#3E2723] p-2 rounded-lg cursor-pointer">
+                    <p class="font-bold text-center">Topic 4</p>
+                    <p>patient, group, outcome, treatment, day, trial, primary, rate, death, year</p>
+                </div>
+                <div class="col-span-2 bg-gray-300 text-[#3E2723] p-2 rounded-lg mb-6 cursor-pointer">
+                    <p class="font-bold text-center">Topic 5</p>
+                    <p>health, study, data, clinical, research, care, patient, intervention, trial, using</p>
+                </div>
+            </div>
+            <div class="col-span-2 px-6 text-gray-200">
+                <p class="text-xl font-semibold">Topics percentage in document:</p>
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class=" text-xl font-semibold">Topic 1</span>
+                            <span class=" text-xl font-semibold">22.73%</span>
+                        </div>
+                        <div class="relative w-full bg-[#3E2723] h-2 rounded-full border-2 border-[#9C7C4F] ">
+                            <div class="absolute top-0 left-0 bg-[#F3e9dc] h-full rounded-full" style="width: 22.73%;"></div>
+                        </div>
+                    </div>
+            
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-white text-xl font-semibold">Topic 2</span>
+                            <span class="text-white text-xl font-semibold">32.59%</span>
+                        </div>
+                        <div class="relative w-full bg-[#3E2723] h-2 rounded-full border-2 border-[#9C7C4F]">
+                            <div class="absolute top-0 left-0 bg-[#F3e9dc] h-full rounded-full" style="width: 32.59%;"></div>
+                        </div>
+                    </div>
+            
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-white text-xl font-semibold">Topic 3</span>
+                            <span class="text-white text-xl font-semibold">28.83%</span>
+                        </div>
+                        <div class="relative w-full bg-[#3E2723] h-2 rounded-full border-2 border-[#9C7C4F]">
+                            <div class="absolute top-0 left-0 bg-[#F3e9dc] h-full rounded-full" style="width: 28.83%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-white text-xl font-semibold">Topic 4</span>
+                            <span class="text-white text-xl font-semibold">35.05%</span>
+                        </div>
+                        <div class="relative w-full bg-[#3E2723] h-2 rounded-full border-2 border-[#9C7C4F]">
+                            <div class="absolute top-0 left-0 bg-[#F3e9dc] h-full rounded-full" style="width: 35.05%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-white text-xl font-semibold">Topic 5</span>
+                            <span class="text-white text-xl font-semibold">38.32%</span>
+                        </div>
+                        <div class="relative w-full bg-[#3E2723] h-2 rounded-full border-2 border-[#9C7C4F]">
+                            <div class="absolute top-0 left-0 bg-[#F3e9dc] h-full rounded-full" style="width: 38.32%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="bg-gray-300 rounded-lg text-[#3E2723] p-4 font-bold">try topic modeling</button>
+            
+            </div>
+
+        </div>
+     </div>
+    <!-- end page 5 -->
+     <!-- 6th page detective board -->
+      <div class="mt-6 p-6 w-full h-screen bg-[#F3e9dc] text-[#3E2723] rounded-lg  ">
+        <h1 class="text-5xl font-cinzel text-center font-bold mb-3">The case board </h1>
+        <div class="relative w-full h-[80vh] bg-[#3E2723] shadow-inner p-4" style="background: url('texture.jpg') #3E2723; background-blend-mode: multiply; border: 20px solid #5C4033; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);">
+            <div class="absolute bg-[#F3e9dc] p-4 border border-[#3E2723] shadow-lg transform rotate-[-2deg]"
+                 style="width: 200px; top: 40px; left: 60px;">
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-2xl">📌</div>
+              <h3 class="font-bold mb-2 text-[#3E2723] underline">Suspect</h3>
+              <p class="text-[#3E2723]">mysterious association </p>
+            </div>
+          
+            <div class="absolute bg-[#F3e9dc] p-4 border border-[#3E2723] shadow-lg transform rotate-[-4deg]"
+                 style="width: 200px; top: 220px; left: 300px;">
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-2xl">📌</div>
+              <h3 class="font-bold mb-2 text-[#3E2723] underline">Clue</h3>
+              <p class="text-[#3E2723]">Letter with uknown source</p>
+            </div>
+          
+            <div class="absolute bg-[#F3e9dc] p-4 border border-[#3E2723] shadow-lg transform rotate-[-1deg]"
+                 style="width: 220px; top: 100px; left: 500px;">
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-2xl">📌</div>
+              <h3 class="font-bold mb-2 text-[#3E2723] underline">Topics</h3>
+              <p class="text-[#3E2723]">All abstracts are related with health,disease...</p>
+            </div>
+            <div class="absolute bg-[#F3e9dc] p-4 border border-[#3E2723] shadow-lg transform rotate-[-3deg] "
+                 style="width: 220px; top: 300px; left: 650px;">
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-2xl">📌</div>
+              <h3 class="font-bold mb-2 text-[#3E2723] underline">Strange words</h3>
+              <p class="text-[#3E2723] text-wrap">disease,association, outcome,canser...</p>
+            </div>
+            <div class="absolute bg-[#F3e9dc] p-4 border border-[#3E2723] shadow-lg transform rotate-[-2deg]"
+                 style="width: 200px; top: 90px; left: 850px;">
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-2xl">📌</div>
+              <img src="{% static 'main_app/suspect.png' %}" alt="suspect" class="size-32 bg-cover">
+            </div>
+          <div class="absolute bg-[#F3e9dc] p-4 border border-[#3E2723] shadow-lg transform rotate-[-2deg]"
+                 style="width: 200px; top: 300px; left: 50px;">
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-2xl">📌</div>
+              <img src="{% static 'main_app/lab.png' %}" alt="suspect" class="size-32 bg-cover border">
+            </div>
+            <svg class="absolute top-0 left-0 w-full h-full pointer-events-none">
+              <path d="M 160 40 C 220 120, 250 140, 400 220"
+                    stroke="red" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M 400 220 C 450 180, 500 140, 600 100"
+                    stroke="red" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M 600 100 C 650 170, 680 220, 730 300"
+                    stroke="red" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+              
+      </div>
+      <!-- hsabhjsa -->
+      <div class="min-h-screen flex flex-col justify-center items-center p-6">
+        <div class="max-w-2xl w-full">
+          <h1 class="text-5xl font-cinzel text-center font-bold">
+            Final act
+          </h1>
+          <div class="space-y-6">
+            <p class="text-lg">
+                After weeks of relentless investigation, Sherlock Holmes and Dr. Watson uncovered the sinister plans of the mysterious association. Holmes infiltrated their hidden laboratory near London’s Wapping docks, stealing crucial documents that revealed their plot: the creation of a deadly virus to be released globally, followed by the sale of an exorbitantly priced cure. Dr. Watson, studying the documents, identified the mastermind as <span class="highlight">Dr. Alistair Blackwood</span>, a disgraced scientist seeking wealth and revenge.
+              </p>
+              <p class="text-lg">
+                With the help of Inspector Lestrade, Holmes and Watson led a raid on the lab. In a tense confrontation, Holmes outwitted Blackwood, disarming him and securing the virus. Blackwood was arrested, his plan thwarted. As he was taken away, he sneered, “The world is corrupt, Holmes. There will always be others.” Holmes replied calmly, “And there will always be those who fight to protect it.”
+              </p>
+              <p class="text-lg">
+                Back at Baker Street, Holmes and Watson reflected on their victory. Holmes acknowledged the crucial role of their <span class="highlight">NLP engineer</span>, whose expertise in decoding the association’s messages had been instrumental in solving the case. Just as they were about to toast to their success, a knock at the door interrupted them.
+              </p>
+              <p class="text-lg">
+                Standing at the door was a nervous young man. “My name is <span class="highlight">Thomas Reed</span>,” he said. “I’m the web developer who sent you the anonymous letter. I worked for the association, but I couldn’t stand by and let them carry out their plan. I knew you were the only one who could stop them.”
+              </p>
+              <p class="text-lg">
+                Holmes smiled faintly. “Your courage has saved countless lives, Mr. Reed. You may have worked in the shadows, but your actions have brought light to this dark affair.” Watson added, “You’re a hero, whether the world knows it or not.”
+              </p>
+              <p class="text-lg">
+                With the world safe once more, Holmes, Watson, and Reed shared a quiet toast. The case was closed, but the bonds forged in the fight against evil remained unbroken.
+              </p>
+          </div>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="text-center font-cinzel mt-10  " >
+        <p class="italic text-6xl ">— The End —</p>
+        <P>Directed by <br> Addar Sayf eddine</P>
+        <p>Cast:</p>
+        <p>Cherrar Med Fazil  | Sherlock holmes</p>
+        <p>Rabehi lokman   | Dr.Watson</p>
+        <p>Special thanks to: <br> Mrs.Melyara Mezzi </p>
+
+      </div>
+      <div class=" h-screen w-full p-6 cast">
+
+
+      </div>
+    
+    
+      <script>
+        const carousel = document.getElementById('carousel');
+        const slides = carousel.querySelectorAll('ul');
+        const dotsContainer = document.getElementById('carousel-dots');
+        const dots = dotsContainer.querySelectorAll('span');
+      
+        let currentIndex = 0;
+      
+        function updateCarousel() {
+          carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+          updateDots();
+        }
+      
+        function updateDots() {
+          dots.forEach((dot, index) => {
+            if(index === currentIndex) {
+              dot.classList.remove('bg-gray-500');
+              dot.classList.add('bg-[#3E2723]');
+            } else {
+              dot.classList.remove('bg-[#3E2723]');
+              dot.classList.add('bg-gray-500');
+            }
+          });
+        }
+        function nextSlide() {
+          if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            updateCarousel();
+          }
+        }
+      
+        function prevSlide() {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          }
+        }
+        
+        updateCarousel();
+      </script>
+      
+</body>
+</html>
