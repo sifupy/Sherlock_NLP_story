@@ -42,7 +42,13 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                cinzel: ['Cinzel', 'serif'], // For headings
+                courier: ['Courier Prime', 'monospace'],
+                lora: ['Lora', 'serif']
+              },
+        },
     },
     plugins: [
         /**
