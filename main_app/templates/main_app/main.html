@@ -23,7 +23,7 @@
 </head>
 <body class="bg-[#3E2723] p-4 font-courier text-gray-200">
     <!-- Banner -->
-    <div class="p-4 flex flex-col md:flex-row justify-between items-center" id="top-nav">
+    <div class="p-4 flex flex-row  justify-between items-center" id="top-nav">
         <div class="flex items-center px-4">
             <img src="{% static 'main_app/pipe.png' %}" alt="pipe" class="size-8">
             <p class="font-bold ml-2 text-xl">Sherlock Parse</p>
@@ -487,47 +487,53 @@
 
       </div>
     
-    
       <script>
-        const carousel = document.getElementById('carousel');
-        const slides = carousel.querySelectorAll('ul');
-        const dotsContainer = document.getElementById('carousel-dots');
-        const dots = dotsContainer.querySelectorAll('span');
-      
-        let currentIndex = 0;
-      
-        function updateCarousel() {
-          carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-          updateDots();
-        }
-      
-        function updateDots() {
-          dots.forEach((dot, index) => {
-            if(index === currentIndex) {
-              dot.classList.remove('bg-gray-500');
-              dot.classList.add('bg-[#3E2723]');
-            } else {
-              dot.classList.remove('bg-[#3E2723]');
-              dot.classList.add('bg-gray-500');
-            }
-          });
-        }
-        function nextSlide() {
-          if (currentIndex < slides.length - 1) {
-            currentIndex++;
-            updateCarousel();
-          }
-        }
-      
-        function prevSlide() {
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-          }
-        }
-        
-        updateCarousel();
+        let currentSlide = 0;
+const slides = document.querySelectorAll('#carousel ul');
+const totalSlides = 5;
+const dots = document.querySelectorAll('#carousel-dots span');
+
+// Function to update the slide display
+function updateSlide() {
+  const offset = -currentSlide * 100;
+  document.getElementById('carousel').style.transform = `translateX(${offset}%)`;
+
+  // Update active dot
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('bg-[#3E2723]', index === currentSlide);
+    dot.classList.toggle('bg-gray-500', index !== currentSlide);
+  });
+}
+
+// Previous slide
+function prevSlide() {
+  if (currentSlide > 0) {
+    currentSlide--;
+    updateSlide();
+  }
+}
+
+// Next slide
+function nextSlide() {
+  if (currentSlide < totalSlides - 1) {
+    currentSlide++;
+    updateSlide();
+  }
+}
+
+// Dot navigation
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentSlide = index;
+    updateSlide();
+  });
+});
+
+// Initialize the carousel
+updateSlide();
+
       </script>
+      
       
 </body>
 </html>
