@@ -1,15 +1,10 @@
 {
-  "build": {
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "sherlock.settings"
-    },
-    "commands": [
-      "pip install -r requirements.txt",
-      "python manage.py collectstatic --noinput",
-      "npm install",
-      "npm run build"
-    ]
-  },
+  "builds": [
+    {
+      "src": "sherlock/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
   "routes": [
     {
       "src": "/static/(.*)",
@@ -17,7 +12,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "sherlock/wsgi.py"
     }
   ]
 }
