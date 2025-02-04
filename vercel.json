@@ -1,24 +1,23 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "sherlock/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9",
-        "postBuildCommand": "./build_files.sh"
-      }
-    }
-  ],
+  "build": {
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "sherlock.settings"
+    },
+    "commands": [
+      "pip install -r requirements.txt",
+      "python manage.py collectstatic --noinput",
+      "npm install",
+      "npm run build"
+    ]
+  },
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/staticfiles_build/$1"  
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "sherlock/wsgi.py"
+      "dest": "/"
     }
   ]
 }
