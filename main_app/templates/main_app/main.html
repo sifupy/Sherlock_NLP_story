@@ -5,64 +5,62 @@
 <head>
     {% tailwind_css %}
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{% static 'main_app/pipe.png' %}" type="image/x-icon" />
     <title>Pipe & Parse</title>
     <style>
-    .cast {
-        inset: 0;
-        background-image: url('/static/main_app/city1.png');  
-        background-size: cover;
-        background-position: center;
-        opacity: 0.9; 
-        z-index: -1; 
-      } </style>
-    
+        .cast {
+            inset: 0;
+            background-image: url('/static/main_app/city1.png');  
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9; 
+            z-index: -1; 
+        }
+    </style>
 </head>
 <body class="bg-[#3E2723] p-4 font-courier text-gray-200">
-    <!-- idk what to comment it's just the banner -->
-    <div class="p-4 flex justify-between" id="top-nav" >
-        <div class="flex px-4">
-            <img src="{% static 'main_app/pipe.png' %}" alt="pipe" class="size-8 ">
-            <p class="font-bold  ml-2 text-xl">Sherlock Parse</p>
+    <!-- Banner -->
+    <div class="p-4 flex flex-col md:flex-row justify-between items-center" id="top-nav">
+        <div class="flex items-center px-4">
+            <img src="{% static 'main_app/pipe.png' %}" alt="pipe" class="size-8">
+            <p class="font-bold ml-2 text-xl">Sherlock Parse</p>
         </div>
-        <p class="font-bold text-gray-200">By : Sayf Fazeel & Lokman </p>
+        <p class="font-bold text-gray-200 mt-4 md:mt-0">By : Sayf Fazeel & Lokman</p>
     </div>
-    <div class="grid grid-cols-2 p-6 max-h-screen min-h-svh">
-        <div>
-            <p class="text-6xl font-bold text-left font-cinzel mb-8 ">Unravel the Mystery with Sherlock Holmes</p>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 p-6 max-h-screen min-h-svh">
+        <div class="order-2 md:order-1">
+            <p class="text-4xl md:text-6xl font-bold text-left font-cinzel mb-8">Unravel the Mystery with Sherlock Holmes</p>
             <p class="text-lg leading-relaxed">
                 <span class="font-semibold">Sunday, 12 March</span> — Mr. Holmes received a peculiar letter from an anonymous sender. The letter was written in a cryptic code, with strange symbols and numbers scattered across the page. As he sat by the fireplace, puffing on his pipe, Holmes meticulously examined the letter, his sharp eyes scanning every detail. "Watson," he said, "this is no ordinary case. The key lies in the patterns hidden within the text, i think we need an NLP engineer to help us ! "...
             </p>
-
         </div>
-        <div class="relative pt-8">
+        <div class="relative pt-8 order-1 md:order-2">
             <div class="relative bg-gray-300 p-6 rounded-lg shadow-lg max-w-80 mx-auto">
                 <div class="absolute -bottom-4 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
-                <p class="text-lg text-gray-700 italic">"We've heard that you are an NLP engineer,would u be able to help us ? "</p>
+                <p class="text-lg text-gray-700 italic">"We've heard that you are an NLP engineer, would you be able to help us?"</p>
                 <div class="absolute right-6 bottom-1">
-                    <button class="text-gray-700 text-lg italic hover:text-green-600">yes</button>
+                    <a class="text-gray-700 text-lg italic hover:text-green-600 ease-in-out" href="#xml">yes</a>
                     <button class="text-gray-700 text-lg italic hover:text-red-600">no</button>
                 </div>
             </div>
-            <img src="{% static 'main_app/caracter1.png' %}" alt="mr.holmes" class="absolute opacity-95  right-0" >
-            
+            <img src="{% static 'main_app/caracter1.png' %}" alt="mr.holmes" class="absolute opacity-95 right-0 w-48 md:w-64">
         </div>
-        
-
     </div>
-    <!-- deuxiemme page discussion et document xml -->
-    <div class="p-6   w-full h-fit bg-[#F3e9dc] text-[#3E2723] rounded-lg ">
-        <h1 class="text-5xl font-cinzel text-center font-bold mb-3">WHAT is this letter :</h1>
-        <div class="grid grid-cols-7">
-            <div class="bg-[#3E2723] flex-col  text-white rounded-lg p-6 w-full h-fit overflow-hidden col-span-2 flex justify-center">
-                <p class="">
+
+    <!-- XML Section -->
+    <div class="p-6 w-full h-fit bg-[#F3e9dc] text-[#3E2723] rounded-lg mb-4" id="xml">
+        <h1 class="text-4xl md:text-5xl font-cinzel text-center font-bold mb-3">WHAT is this letter:</h1>
+        <div class="grid grid-cols-1 md:grid-cols-7 gap-4">
+            <div class="bg-[#3E2723] flex-col text-white rounded-lg p-6 w-full h-fit overflow-hidden md:col-span-2 flex justify-center">
+                <p class="text-sm">
                     &lt;?xml version="1.0" encoding="utf-8"?&gt;
                     &lt;!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd"&gt;
                     &lt;PubmedArticleSet&gt;
-                    
                     &lt;PubmedArticle&gt;
                         &lt;MedlineCitation Status="MEDLINE" Owner="NLM"&gt;
                         &lt;PMID Version="1"&gt;7349888&lt;/PMID&gt;
@@ -72,20 +70,18 @@
                             &lt;Day&gt;26&lt;/Day&gt;
                         &lt;/DateCompleted&gt;
                         &lt;DateRevised&gt;
-                            
-                    
-                    </p>
-                    <br>
-                    <br>
-                <a class="bg-gray-300 rounded-lg text-center text-[#3E2723] font-bold px-4 py-2  hover:bg-[#3E2723] hover:text-white transition-all duration-300 hover:border-gray-300 border-2"  href="{% static 'main_app/sample-0001.xml' %}" download="sample-0001.xml">See full letter</a>
+                </p>
+                <br>
+                <br>
+                <a class="bg-gray-300 rounded-lg text-center text-[#3E2723] font-bold px-4 py-2 hover:bg-[#3E2723] hover:text-white transition-all duration-300 hover:border-gray-300 border-2" href="{% static 'main_app/sample-0001.xml' %}" download="sample-0001.xml">See full letter</a>
             </div>
-            <div class="col-span-5  flex flex-col pl-6">
-                
-                <div class="flex ">
+            <div class="md:col-span-5 flex flex-col pl-6">
+                <!-- Conversation -->
+                <div class="flex flex-col md:flex-row">
                     <img src="{% static 'main_app/dr.watson.png'%}" alt="Dr.watson" class="size-48">
-                    <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg w-fit max-h-9 mx-auto">
+                    <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg w-fit max-h-9 mx-auto mt-4 md:mt-0">
                         <div class="absolute -bottom-4 left-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-300"></div>
-                        <p class="text-sm  italic whitespace-nowrap">I really can't make heads or tails of this!</p>
+                        <p class="text-sm italic whitespace-nowrap">I really can't make heads or tails of this!</p>
                     </div>
                     <div class="pt-14 flex -ml-44">
                         <div class="relative bg-gray-300 p-2 rounded-lg shadow-lg max-w-80 min-w-72 max-h-36 mx-auto">
@@ -127,7 +123,7 @@
         </div>
     </div>
    <!-- 3rd page stats of dataset -->
-    <div class="w-full h-screen p-6 " id="Notebook">
+    <div class="w-full h-screen p-6 mb-6 mt-4 " id="Notebook">
         <h1 class="text-5xl font-cinzel text-center font-bold mb-12">Dr. Watson's NLP Lab</h1>
         <div class="grid w-full grid-cols-3">
             <div class="flex-col">
@@ -139,11 +135,11 @@
              </div>
              <div class="col-span-2 flex flex-col items-center">
                 <p class="w-3/4">so after 4h of work with computer on the letter dr.watson wrote all the informations he got in his notebook</p>
-                <div class="relative overflow-hidden w-3/4 p-4 rounded-lg bg-gray-300 h-fit text-[#3E2723]">
+                <div class="relative overflow-hidden w-3/4 p-4 rounded-lg bg-gray-300 max-h-fit text-[#3E2723]">
                     <h1 class="text-lg font-bold underline text-center mb-4">Dr. Watson's Notes:</h1>
                     
                     <!-- Carousel Container -->
-                    <div class="flex transition-transform duration-500 ease-in-out w-full" id="carousel">
+                    <div class="flex transition-transform duration-500 ease-in-out  w-full" id="carousel">
                       <ul class="w-full px-10 italic list-disc flex-shrink-0">
                         <li>There are <span class="underline">70,258</span> abstracts in the document.</li>
                         <li>Number of words before stemming: <span class="underline">52,128</span></li>
@@ -208,10 +204,7 @@
                             <li>('NNS', 'JJ'): 56,667 occurrences</li>
                           </ul>
                         </li>
-                        <li>tags meaning: NN:Noun_singular, NNS:Noun_plural, JJ:Adjective, 
-                            NNP:Proper_noun_singular, VBD:Verb_past_tense, VBN:Verb_past_participle, 
-                            VBG:Verb, gerund/present participle, RB:Adverb
-                        </li>
+                        
                       </ul>
                       <ul class="w-full px-10 italic list-disc flex-shrink-0">
                         <li>POS tag bigrams with biggest probability:
@@ -252,7 +245,7 @@
         </div>
     </div>
     <!-- 4th page another disccussion that leads to topic modeling -->
-    <div class="p-6   w-full h-fit bg-[#F3e9dc] text-[#3E2723] rounded-lg ">
+    <div class="p-6   w-full h-fit bg-[#F3e9dc] text-[#3E2723] rounded-lg mb-6 mt-6 ">
         <h1 class="text-5xl font-cinzel text-center font-bold mb-3">Disease,Association.. ?! </h1>
         <div class="grid grid-cols-7">
             <div class="bg-[#3E2723] flex-col place-content-center text-white rounded-lg p-6 w-full h-fit overflow-hidden col-span-2 flex items-center">
@@ -316,7 +309,7 @@
 
     <!-- end page 4 -->
     <!-- 5th page topic modeling -->
-     <div class="w-full h-svh pt-6">
+     <div class="w-full h-svh pt-6 mb-6 mt-14">
         <h1 class="text-5xl font-cinzel text-center font-bold mb-12">Topic modeling</h1>
         <div class="grid grid-cols-3 ">
             <div class="col-span-1 grid grid-cols-2 grid-rows-3 gap-2 pb-4">
@@ -392,7 +385,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="bg-gray-300 rounded-lg text-[#3E2723] p-4 font-bold">try topic modeling</button>
+                <button class="bg-gray-300 rounded-lg text-[#3E2723] p-4 font-bold hover:bg-inherit hover:border-gray-300 hover:text-gray-300 border-2">try topic modeling</button>
             
             </div>
 
@@ -400,7 +393,7 @@
      </div>
     <!-- end page 5 -->
      <!-- 6th page detective board -->
-      <div class="mt-6 p-6 w-full h-screen bg-[#F3e9dc] text-[#3E2723] rounded-lg  ">
+      <div class="p-6 w-full h-screen bg-[#F3e9dc] text-[#3E2723] rounded-lg  mb-14 mt-14 ">
         <h1 class="text-5xl font-cinzel text-center font-bold mb-3">The case board </h1>
         <div class="relative w-full h-[80vh] bg-[#3E2723] shadow-inner p-4" style="background: url('texture.jpg') #3E2723; background-blend-mode: multiply; border: 20px solid #5C4033; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);">
             <div class="absolute bg-[#F3e9dc] p-4 border border-[#3E2723] shadow-lg transform rotate-[-2deg]"
