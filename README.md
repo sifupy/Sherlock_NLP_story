@@ -16,8 +16,8 @@ https://sherlocknlp.vercel.app
 
 ### 2️⃣ Clone the Repository
 ```bash
-git clone [Insert Repository Link]
-cd [project-folder]
+git clone https://github.com/sifupy/Sherlock_NLP_story
+cd sherlock
 ```
 
 ### 3️⃣ Setup (Django with Tailwind)
