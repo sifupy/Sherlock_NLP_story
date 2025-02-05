@@ -1,0 +1,90 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'main_app/pipe.png' %}" type="image/x-icon" />
+</head>
+<body class="bg-[#3E2723] h-screen p-4 font-courier ">
+    <p class="text-center text-4xl font-bold font-cinzel text-gray-200 mb-4">Dr.Watson's computer</p>
+    <div class="bg-[#F3e9dc] text-[#3E2723] mx-auto w-5/6 h-[95%] p-2 flex flex-col  place-items-center overflow-auto" id="computer">
+    <div class="bg-gray-300 shadow-lg rounded-xl p-6 w-full max-w-2xl">
+        <h1 class="text-2xl font-bold text-center text-[#3E2723] mb-4">Text Analyzer</h1>
+
+        <form action="" method="POST" enctype="multipart/form-data" class="space-y-4">
+            {% csrf_token %}
+
+            <!-- Text Input -->
+            <div>
+                <label for="textInput" class="block  font-medium mb-1">Enter a Sentence or Paragraph:</label>
+                <textarea id="textInput" name="text" rows="5" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type your text here..."></textarea>
+            </div>
+
+            <div class="flex items-center justify-center my-2 text-gray-500">or</div>
+
+            <!-- File Upload -->
+            <div>
+                <label for="fileInput" class="block  font-medium mb-1">Upload a File (max 500 words):</label>
+                <input type="file" id="fileInput" name="file" accept=".txt" class="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-[#3E2723] text-white py-2 rounded-md  transition">
+                Analyze Text
+            </button>
+        </form>
+    </div>
+
+    {% if result %}
+    <div class="bg-gray-300 shadow-lg rounded-xl p-6 mt-8 w-full max-w-2xl">
+        <h2 class="text-xl font-bold text-center text-[#3E2723] mb-4">Analysis Results</h2>
+
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">Text:</h3>
+        <p class="text-gray-800 mb-4">{{ result.text }}</p>
+
+        <!-- POS Tags -->
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">POS Tags:</h3>
+        <ul class="list-disc pl-5">
+            {% for word, pos in result.pos_tags %}
+                <li class="text-gray-800">{{ word }}: <span class="font-semibold">{{ pos }}</span></li>
+            {% endfor %}
+        </ul>
+
+        <!-- Named Entities (NER) -->
+        <h3 class="text-lg font-semibold text-gray-700 mb-2 mt-4">Named Entities:</h3>
+        <ul class="list-disc pl-5">
+            {% for entity, label in result.ner_entities %}
+                <li class="text-gray-800">{{ entity }}: <span class="font-semibold">{{ label }}</span></li>
+            {% endfor %}
+        </ul>
+
+        <!-- Parsing Tree -->
+        <h3 class="text-lg font-semibold text-gray-700 mb-2 mt-4 overflow-auto w-full">Parsing Tree:</h3>
+        <div class="text-gray-800 overflow-auto max-w-full" id="parse-tree-container">
+            {{ result.parse_tree_html|safe }}
+        </div>
+        <h3 class="text-lg font-semibold  mb-2">Top Topics:</h3>
+    <ul class="list-disc pl-5">
+        {% for topic, probability in result.top_topics.items %}
+            <li >{{ topic }}: <span class="font-semibold">{{ probability }}%</span></li>
+        {% endfor %}
+    </ul>
+    <p class="font-bold">There is 5 topics :</p>
+        <ul class="list-disc pl-5">
+            <li><span class="font-semibold">topic1:</span> infection, patient, vaccine, study, treatment, hiv, year, child, compared, case</li>
+            <li><span class="font-semibold">topic2:</span> risk, associated, higher, score, disease, age, study, association, patient, year</li>
+            <li><span class="font-semibold">topic3:</span> genetic, gene, variant, association, study, associated, disease, risk, cancer, analysis</li>
+            <li><span class="font-semibold">topic4:</span> patient, group, outcome, treatment, day, trial, primary, rate, death, year</li>
+            <li><span class="font-semibold">topic5:</span> health, study, data, clinical, research, care, patient, intervention, trial, using</li>
+        </ul>
+        
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

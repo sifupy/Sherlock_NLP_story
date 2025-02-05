@@ -23,6 +23,8 @@ from main_app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main_view,name="home"),
+    path('computer/',second_view,name="computer_view"),
+
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
