@@ -1,6 +1,6 @@
 # Sherlock Holmes Concept Website
 
-This project is an aesthetic website inspired by Sherlock Holmes. It was created as part of our final project and includes features like topic modeling (available only in the local version).
+This project is an aesthetic website inspired by Sherlock Holmes. It was created as part of our final project for the computational linguistics module and it includes features like topic modeling (available only in the local version).
 
 ## 🚀 Live Demo
 https://sherlocknlp.vercel.app
